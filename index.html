@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* Bu uzgarmas position xususiyati, uzini o'zgarishsiz saqlaydi */
+        .static{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            color: white;
+            position: static;
+            left: 100px;
+            top: 300px;
+        }
+        /* Ixtiyori yunalish buyicha position-relative ni joylashtirsa buladi (bottom, left, right,top)*/
+        .relative{
+              width: 150px;
+            height: 150px;
+            background-color: rgb(41, 20, 200);
+            color: white;
+            position: relative;
+            bottom: 100px;
+          
+        }
+        /* O'ziga eng yaqin bulgan elementga nisbatan joylashadi */
+        .absolute{
+            width: 150px;
+              height: 150px;
+            background-color: rgb(34, 219, 17);
+            color: white;
+            position: absolute;
+            top: 10px;
+            left: 500px;
+        
+        }
+        /* Element ekranda doimiy ravishda, boshqa elementlardan mustaqil joylashadi. U skroll qilinganda ham joyini o'zgartirmaydi. */
+        .fixed{
+             width: 150px;
+              height: 150px;
+              background-color: blueviolet;
+              color: white;
+              position: fixed;
+              top: 10px;
+              right: 10px;
+        }
+        /* ekran pastga tushganda ekranda kurinib turadi */
+        .sticky{
+              width: 150px;
+              height: 150px;
+              background-color: rgb(232, 156, 24);
+              color: white;
+              position: sticky;
+              top: 0;
+              
+        }
+        .rotate{
+            width: 100px;
+            height: 80px;
+            background-color: brown;
+            color: white;
+            transform: rotate(150deg);
+        }
+        .scale{
+             width: 100px;
+            height: 80px;
+            background-color: rgb(231, 26, 139);
+            color: white;
+            transform: scale(3, 2);
+            margin-left: 200px;
+        }
+        .translate{
+              width: 100px;
+            height: 80px;
+            background-color: blue;
+            color: white;
+            transform: translate(300px, 100px);
+        }
+        .skew{
+             width: 100px;
+            height: 80px;
+            background-color: rgb(20, 216, 144);
+            transform: skew(10deg, 20deg);
+        }
+        .matrix{
+             width: 100px;
+            height: 80px;
+            background-color: rgb(69, 70, 70);
+            color: white;
+            transform: matrix(1, 1, 0, 0, 0);
+        }
+        .box{
+            width: 150px;
+            height: 100px;
+            background-color: red;
+            color: white;
+        }
+        .z-index1{
+            z-index: 1;
+            position: relative;
+            top: 60px;
+            left: 60px;
+        }
+        .z-index2{
+             z-index: 2;
+            position: relative;
+            top: 40px;
+            left: 40px;
+        }
+        .z-index3{
+             z-index: 3;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+    <div class="static">Static</div>
+    <div class="relative">Relative</div>
+    <div class="absolute">Absolute</div>
+    <div class="fixed">Fixed</div>
+    <div class="sticky">Sticky</div>
+    <hr>
+    <div class="rotate">Rotate</div>
+    <br><br>
+    <div class="scale">Scale</div>
+    <div class="translate">Translate</div>
+    <div class="skew">Skew</div>
+    <div class="matrix">Matrix</div>
+    <canvas id="mycanvas" style="width: 500px; height: 300px;"></canvas>
+    <hr> 
+     <div class="box z-index1">z-index1</div>
+       <div class="box z-index2">z-index2</div>
+         <div class="box z-index3">z-index3</div>
+    <script>
+           let mycanvas = document.getElementById("mycanvas");
+           let ctx = mycanvas.getContext("2d");
+           
+           // chizma chizish
+           ctx.fillStyle = "blue";
+           ctx.fillRect(50, 100, 150, 100);
+
+            ctx.strokeStyle = "green";
+  ctx.lineWidth = 5;
+  ctx.beginPath(200, 400);
+  ctx.moveTo(400, 600);
+  ctx.lineTo(400, 400);
+  ctx.stroke();
+    </script>
+
+</body>
+</html>
